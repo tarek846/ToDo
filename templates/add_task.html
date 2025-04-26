@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إضافة مهمة</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>إضافة مهمة جديدة</h1>
+
+        <form action="{{ url_for('add_task') }}" method="POST">
+            <input type="text" name="task_name" placeholder="اسم المهمة" required>
+            <textarea name="task_description" placeholder="وصف المهمة" required></textarea>
+            <button type="submit" class="btn">حفظ المهمة</button>
+        </form>
+
+        <a href="{{ url_for('home') }}" class="btn back-btn">رجوع للقائمة</a>
+    </div>
+</body>
+</html>
